@@ -1,22 +1,32 @@
-def calculadora_rank(vit, der):
-    rank = vit - der
-
-    if rank < 10:
-        rank = "Ferro"
-    elif 11 < rank <= 20:
-        rank = "Bronze"
-    elif 21 < rank <= 50:
-        rank = "Prata"
-    elif 51 < rank <= 80:
-        rank = "Ouro"
-    elif 81 < rank <= 90:
-        rank = "Diamante"
-    elif 91 < rank <= 100:
-        rank = "Lendário"
-    else:
-        rank = "Imortal"
-
+def calculadora_partidas_ranqueadas():
+    print("=== Calculadora de Partidas Ranqueadas ===")
     
-    print(f"O Herói tem saldo de {vit - der} e está no nível {rank}")
+    # Entrada de dados
+    vitorias = int(input("Digite o número de vitórias: "))
+    derrotas = int(input("Digite o número de derrotas: "))
+    
+    # Cálculo do saldo
+    saldo = vitorias - derrotas
+    
+    # Determinando o rank
+    if saldo <= 10:
+        nivel = "Ferro"
+    elif saldo <= 20:
+        nivel = "Bronze"
+    elif saldo <= 50:
+        nivel = "Prata"
+    elif saldo <= 80:
+        nivel = "Ouro"
+    elif saldo <= 90:
+        nivel = "Diamante"
+    elif saldo <= 100:
+        nivel = "Lendário"
+    else:
+        nivel = "Imortal"
+    
+    # Exibindo resultado
+    print(f"O Herói tem um saldo de {saldo} e está no nível de {nivel}.")
 
-calculadora_rank(300, 50)
+# Executa a função
+if __name__ == "__main__":
+    calculadora_partidas_ranqueadas()
